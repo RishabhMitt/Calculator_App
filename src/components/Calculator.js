@@ -4,6 +4,8 @@ import moonIcon from "../Assets/moon.png";
 import sunIcon from "../Assets/sun.png";
 import CalculatorHeader from "./CalculatorHeader";
 import CalculatorKeypad from "./CalculatorKeypad";
+import classess from "./CalculatorHeader.module.css";
+
 const usedKeyCodes = [
   48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103,
   104, 105, 106, 107, 109, 8, 13, 187, 189, 190, 191,
@@ -79,7 +81,7 @@ const Calculator = () => {
       onKeyDown={(event) => handleKeypress(event.keyCode, event.key)}
       data-theme={isDarkMode ? "dark" : ""}
     >
-      <div className={classes.calculator}>
+      <div className={`${classes.calculator} ${classess.custom_scroll}`}>
         <div className={classes.navbar}>
           <div
             onClick={() => {

@@ -12,15 +12,18 @@ const CalculatorHeader = (props) => {
   }, [props.expression]);
 
   return (
-    <div className={`${classes.header} ${classes.custom_scroll}`}>
-      <div className={classes.history}>
+    <div className={`${classes.header} ${classes.custom_scroll} `}>
+      <div className={`${classes.history}`}>
         {props.history &&
           props.history?.map((item) => {
             return <p key={item + "" + Math.random() * 44}>{item}</p>;
           })}
       </div>
       <br />
-      <div ref={expressionRef} className={classes.expression}>
+      <div
+        ref={expressionRef}
+        className={`${classes.expression} ${classes.custom_scroll}`}
+      >
         <p>{props.expression}</p>
       </div>
       <p ref={resultRef} className={classes.result}>
